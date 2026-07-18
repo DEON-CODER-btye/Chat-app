@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="output.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+    rel="stylesheet" />
+</head>
+
+<body class="text-black font-['Poppins'] bg-gradient-to-br from-blue-500 via-blue-400 via-sky-200 to-white">
+  <main class="mx-5">
+    <div class="container flex justify-center items-center mx-auto h-screen">
+      <div
+        class="w-full max-w-[600px] min-h-[850px]  bg-white/20 backdrop-blur-xl border border-white/30 shadow-2xl rounded-2xl">
+        <div class="flex items-center justify-center gap-4">
+          <img class="w-20 rounded-full mt-8 border-2 border-blue-500"
+            src="https://img.magnific.com/premium-vector/flat-messa…ymbol-vector-illustration_1026019-2930.jpg?w=1480"
+            alt="" />
+          <h1 class="md:text-5xl text-3xl text-center mt-8 font-bold">
+            Chat <span class="text-blue-600">Buddy</span>
+          </h1>
+        </div>
+        <h3 class="text-center text-3xl mt-3 font-semibold">
+          Create Account
+        </h3>
+        <form>
+          <div class="md:p-6 p-6">
+            <!-- <h2 class="text-3xl font-medium">Login</h2> -->
+            <label for="username" class="mt-5 py-2 block font-semibold">Username</label>
+            <input id="username"
+              class="bg-white text-black px-3 py-2 max-w-[600px] w-full rounded-[4px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 border border-gray-400"
+              type="text" placeholder="Username" name="username" autocomplete="username" required />
+            <label for="email" class="mt-5 py-2 block font-semibold">Email</label>
+            <input id="email"
+              class="bg-white text-black px-3 py-2 max-w-[600px] w-full rounded-[4px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 border border-gray-400"
+              type="email" placeholder="Email" name="email" autocomplete="email" required />
+            <label for="password" class="mt-5 py-2 block font-semibold">Password</label>
+            <input id="password"
+              class="bg-white text-black px-3 py-2 max-w-[600px] w-full rounded-[4px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 border border-gray-400"
+              type="password" placeholder="Password" name="password" autocomplete="new-password" required />
+            <label for="confirm-password" class="mt-5 py-2 block font-semibold">Confirm Password</label>
+            <input id="confirm-password"
+              class="bg-white text-black px-3 py-2 max-w-[600px] w-full rounded-[4px] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 border border-gray-400"
+              type="password" placeholder="Confirm Password" name="confirmPassword" autocomplete="new-password"
+              required />
+            <div class="mt-5 text-center">
+              Already have an account?<a class="hover:underline text-blue-500 font-semibold" href="">
+                Login</a>
+            </div>
+          </div>
+          <button type="submit"
+            class="bg-gradient-to-r from-blue-600 to-blue-500 w-full max-w-[300px] py-2.5 text-white flex justify-center mx-auto rounded-[7px] shadow-[0_20px_50px_rgba(59,130,246,0.25)]">
+            Create Account
+          </button>
+        </form>
+        <div class="text-center mt-5 flex items-center justify-center gap-5">
+          <div class="bg-gray-400 w-full max-w-44 h-full min-h-[1px]"></div>
+          or continue with
+          <div class="bg-gray-400 w-full max-w-44 h-full min-h-[1px]"></div>
+        </div>
+        <div class="links flex gap-6 justify-center mt-7">
+          <div class="shade bg-white text-black w-20 h-12 rounded-[7px] flex justify-center items-center">
+            <a href="">
+              <img src="svg/flat-color-icons_google.svg" alt="Google-logo" /></a>
+          </div>
+          <div class="shade bg-white text-black w-20 h-12 rounded-[7px] flex justify-center items-center">
+            <a href="">
+              <img src="svg/akar-icons_github-fill.svg" alt="github-logo" /></a>
+          </div>
+          <div class="shade bg-white text-black w-20 h-12 rounded-[7px] flex justify-center items-center">
+            <a href="">
+              <img src="svg/bi_facebook.svg" alt="facebook-logo" /></a>
+          </div>
+        </div>
+        <!-- <div class="text-center mt-7">Dont't have an account? <a href="" class="text-blue-500 font-semibold px-1"> Sign
+            Up</a>
+        </div> -->
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>

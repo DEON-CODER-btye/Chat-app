@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <link rel="stylesheet" href="output.css" />
+  <link rel="stylesheet" href="style.css" />
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+</head>
+
+<body class="font-['Poppins'] overflow-hidden">
+  <main>
+    <div class="flex bg-gray-100 w-full h-screen overflow-hidden">
+      <!-- LEFT SIDEBAR -->
+      <div class="bg-gray-50 w-full max-w-[460px] h-screen overflow-y-auto mx-1 p-2">
+        <h1 class="text-4xl pt-5 text-center font-bold">
+          💬Chat
+          <span class="text-blue-500">Buddy</span>
+          <i class="fa-solid fa-bars text-3xl pl-16"></i>
+        </h1>
+
+        <button
+          class="bg-blue-500 px-28 py-3 mt-5 flex mx-auto justify-center text-white items-center rounded-[7px] text-2xl">
+          + New Chat
+        </button>
+
+        <div class="pt-8 relative flex">
+          <input class="w-full max-w-[350px] rounded-[5px] py-3 pl-9 mx-2 bg-gray-200 text-black" type="text"
+            placeholder="Search Conversations..." />
+
+          <i class="fa-solid fa-magnifying-glass absolute left-4 top-12 text-gray-500"></i>
+
+          <div class="bg-gray-200 px-7 py-3 rounded-[5px]">
+            <i class="fa-solid fa-sliders text-gray-500"></i>
+          </div>
+        </div>
+
+        <div
+          class="bg-gray-200 w-full max-w-[440px] min-h-[60px] mt-5 rounded-[5px] flex mx-auto items-center text-black justify-between px-5">
+          <div class="ml-3 w-10 h-10 rounded-full bg-gray-300 bg-[url('man.png')] bg-cover bg-center"></div>
+
+          <div>
+            <h2>Priya Sharma</h2>
+            <p>Hey! How are you doing?</p>
+          </div>
+
+          <div>
+            <div>10:30 AM</div>
+
+            <div class="bg-blue-500 text-gray-200 w-8 h-8 rounded-full flex justify-center items-center">
+              2
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-gray-200 w-full max-w-[440px] min-h-[60px] mt-5 rounded-[5px] flex mx-auto items-center text-black justify-between px-5">
+          <div class="ml-3 w-10 h-10 rounded-full bg-gray-300 bg-[url('man.png')] bg-cover bg-center"></div>
+
+          <div>
+            <h2>Priya Sharma</h2>
+            <p>Hey! How are you doing?</p>
+          </div>
+
+          <div>
+            <div>10:30 AM</div>
+
+            <div class="bg-blue-500 text-gray-200 w-8 h-8 rounded-full flex justify-center items-center">
+              2
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-gray-200 w-full max-w-[440px] min-h-[60px] mt-5 rounded-[5px] flex mx-auto items-center text-black justify-between px-5">
+          <div class="ml-3 w-10 h-10 rounded-full bg-gray-300 bg-[url('man.png')] bg-cover bg-center"></div>
+
+          <div>
+            <h2>Priya Sharma</h2>
+            <p>Hey! How are you doing?</p>
+          </div>
+
+          <div>
+            <div>10:30 AM</div>
+
+            <div class="bg-blue-500 text-gray-200 w-8 h-8 rounded-full flex justify-center items-center">
+              2
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-gray-200 w-full max-w-[440px] min-h-[60px] mt-5 rounded-[5px] flex mx-auto items-center text-black justify-between px-5">
+          <div class="ml-3 w-10 h-10 rounded-full bg-gray-300 bg-[url('man.png')] bg-cover bg-center"></div>
+
+          <div>
+            <h2>Priya Sharma</h2>
+            <p>Hey! How are you doing?</p>
+          </div>
+
+          <div>
+            <div>10:30 AM</div>
+            <div class="bg-blue-500 text-gray-200 w-8 h-8 rounded-full flex justify-center items-center">
+              2
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gray-100 flex-1 h-screen flex flex-col overflow-hidden">
+        <div class="flex bg-white w-full items-center gap-5 h-[100px] text-black px-5 shadow-md flex-shrink-0">
+          <div class="w-10 h-10 rounded-full bg-gray-300 bg-[url('man.png')] bg-cover bg-center"></div>
+
+          <div class="w-full">
+            <h2>Priya Sharma</h2>
+            <h3>Online</h3>
+          </div>
+
+          <div class="flex items-center gap-8 text-2xl text-gray-700">
+            <i class="fa-solid fa-magnifying-glass cursor-pointer hover:text-blue-500"></i>
+
+            <i class="fa-solid fa-phone cursor-pointer hover:text-blue-500"></i>
+
+            <i class="fa-solid fa-video cursor-pointer hover:text-blue-500"></i>
+
+            <i class="fa-solid fa-ellipsis-vertical cursor-pointer hover:text-blue-500"></i>
+          </div>
+        </div>
+
+        <div class="chatContainer flex-1 overflow-y-auto px-5">
+          <div class="flex pt-5 justify-center">
+            <h2 class="bg-gray-200 rounded-2xl px-4 py-1">Today</h2>
+          </div>
+
+          <div class="send mt-5">
+            <div>
+              <span class="bg-white text-black px-2 py-2 rounded-[5px]">
+                Hey ✋
+              </span>
+            </div>
+
+            <div class="mt-16 flex justify-end">
+              <span class="bg-blue-400 text-white px-5 py-2 rounded-[5px]">
+                How are you doing
+              </span>
+            </div>
+
+            <div class="mt-16">
+              <span class="bg-white text-black px-5 py-3 rounded-[5px] w-fit">
+                I'm good too ! just working on a new project.
+
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gray-100 py-8 flex-shrink-0">
+          <div class="flex items-center bg-white rounded-xl border px-4 py-1.5 mx-5">
+            <i class="fa-regular fa-face-smile"></i>
+
+            <input type="text" placeholder="Type a message..." class="messageBox flex-1 px-4 outline-none" />
+
+            <i class="fa-solid fa-paperclip mr-4"></i>
+
+            <button class="w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center">
+              <i class="sendBtn fa-solid fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>

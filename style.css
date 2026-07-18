@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+.sender {
+  @apply bg-blue-400 text-white px-5 py-1 rounded-[5px] mt-2 w-fit flex justify-end;
+}
+
+.property {
+  @apply flex flex-col items-end;
+}
+
+.receive {
+  @apply bg-white text-black px-5 rounded-[5px] w-fit mx-2 py-3 flex;
+}
+
+.margin {
+  @apply mt-12
+}
+
+.text {
+  @apply text-[9px] flex justify-end items-end pl-1;
+}
