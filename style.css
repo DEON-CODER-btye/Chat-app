@@ -19,3 +19,11 @@
 .text {
   @apply text-[9px] flex justify-end items-end pl-1;
 }
+
+.card {
+  @apply bg-gray-200 w-full min-h-16 mt-5 rounded-[5px] flex mx-auto items-center text-black justify-between px-5;
+}
+
+.imgCard {
+  @apply ml-3 w-10 h-10 rounded-full bg-gray-300 bg-[url('man.png')] bg-cover bg-center;
+}

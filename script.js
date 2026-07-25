@@ -1,13 +1,49 @@
+
 const sender = document.querySelector(".send");
 const messageInput = document.querySelector(".messageBox");
 const sendBtn = document.querySelector(".sendBtn");
 const chatContainer = document.querySelector(".chatContainer");
+const cardContainer = document.querySelector('.cardContainer')
+function createSidebarChat(user) {
+  const imgDiv = document.createElement('div')
+  imgDiv.classList.add('imgCard')
+  const nameAndMessageContainer = document.createElement('div')
+  const timeAndUnreadMessage = document.createElement('div')
+  const innerContainer = document.createElement('div')
+  innerContainer.classList.add('card')
+  const userName = document.createElement('h2')
+  const userMessage = document.createElement('p')
+  const userTime = document.createElement('div')
+  const unreadMessage = document.createElement('div')
+
+  userName.textContent = user.name
+  userMessage.textContent = user.lastMessage
+  userTime.textContent = user.time
+  unreadMessage.textContent = user.unread
+
+  innerContainer.append(imgDiv)
+  nameAndMessageContainer.append(userName, userMessage);
+  timeAndUnreadMessage.append(userTime, unreadMessage);
+  innerContainer.append(nameAndMessageContainer, timeAndUnreadMessage);
+  cardContainer.append(innerContainer);
+
+}
+
+const fetchMessage = fetch('message.json')
+  .then((res) =>
+    res.json()
+      .then((data) => {
+        data.forEach((el) => {
+          createSidebarChat(el)
+        })
+      }))
+
 let data = JSON.parse(localStorage.getItem("data")) || [];
 data.forEach((msg) => {
   if (msg.type === "sender") {
     createMessage(msg);
   } else {
-    createMessageReceiver(msg);
+    createMessageReceiver(msg, false);
   }
   chatContainer.scrollTo({
     top: chatContainer.scrollHeight,
@@ -31,7 +67,7 @@ function sendMessage() {
   if (messageInput.value.trim() === "") return;
   const messageData = {
     text: messageInput.value.trim(),
-    time: new Date().toLocaleTimeString(),
+    time: timer(),
     type: "sender",
   };
   data.push(messageData);
@@ -53,29 +89,47 @@ messageInput.addEventListener("keypress", (e) => {
 });
 
 let receiveMessages = ["hello", "how are you", "where should we go tommoro?"];
-function createMessageReceiver(el) {
+function createMessageReceiver(el, showTyping) {
   const receiveContainer = document.createElement("div");
+  const typingEffect = document.createElement("div");
   receiveContainer.classList.add("margin");
-  const receiver = document.createElement("span");
   const receiveTime = document.createElement("span");
-  receiver.classList.add("receive");
-  receiver.textContent = el.text;
+  const receiver = document.createElement("span");
   sender.append(receiveContainer);
-  receiveContainer.append(receiver);
   receiveTime.classList.add("text");
-  receiveTime.textContent = el.time;
-  receiver.append(receiveTime);
+  receiveContainer.append(receiver);
+  receiver.classList.add("receive");
+
+  if (showTyping) {
+    typingEffect.textContent = "typing...";
+    receiver.append(typingEffect);
+
+    chatContainer.scrollTo({
+      top: chatContainer.scrollHeight,
+      behavior: "smooth",
+    });
+    setTimeout(() => {
+      receiver.textContent = el.text;
+      receiveTime.textContent = el.time;
+      receiver.append(receiveTime);
+    }, 2000);
+  } else {
+    receiver.textContent = el.text;
+    receiveTime.textContent = el.time;
+    receiver.append(receiveTime);
+  }
 }
+
 function receiverMessage() {
   let randomMessage = Math.floor(Math.random() * receiveMessages.length);
   setTimeout(() => {
     const messageData1 = {
-      time: new Date().toLocaleTimeString(),
+      time: timer(),
       type: "receiver",
       text: receiveMessages[randomMessage],
     };
     data.push(messageData1);
-    createMessageReceiver(messageData1);
+    createMessageReceiver(messageData1, true);
     chatContainer.scrollTo({
       top: chatContainer.scrollHeight,
       behavior: "smooth",

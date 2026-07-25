@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Priya",
+    "avatar": "P",
+    "lastMessage": "See you tomorrow 😊",
+    "time": "10:30 PM",
+    "online": true,
+    "unread": 2
+  },
+  {
+    "id": 2,
+    "name": "Aman",
+    "avatar": "A",
+    "lastMessage": "Project is looking good 🔥",
+    "time": "9:15 PM",
+    "online": false,
+    "unread": 0
+  },
+  {
+    "id": 3,
+    "name": "Deepak",
+    "avatar": "D",
+    "lastMessage": "Can you send the files?",
+    "time": "8:45 PM",
+    "online": true,
+    "unread": 5
+  },
+  {
+    "id": 4,
+    "name": "Ali",
+    "avatar": "A",
+    "lastMessage": "Let's meet tomorrow",
+    "time": "Yesterday",
+    "online": false,
+    "unread": 0
+  },
+  {
+    "id": 5,
+    "name": "Rahul",
+    "avatar": "R",
+    "lastMessage": "Good morning bro",
+    "time": "Yesterday",
+    "online": true,
+    "unread": 1
+  },
+  {
+    "id": 6,
+    "name": "Neha",
+    "avatar": "N",
+    "lastMessage": "Thank you Brother ❤️",
+    "time": "Monday",
+    "online": false,
+    "unread": 0
+  }
+]
