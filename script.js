@@ -1,42 +1,87 @@
-
+// debugger
 const sender = document.querySelector(".send");
 const messageInput = document.querySelector(".messageBox");
 const sendBtn = document.querySelector(".sendBtn");
 const chatContainer = document.querySelector(".chatContainer");
-const cardContainer = document.querySelector('.cardContainer')
+const cardContainer = document.querySelector(".cardContainer");
+const cardContainer1 = document.querySelectorAll(".cardContainer");
+const startingText = document.querySelector('.startingPage')
+const showChat = document.querySelector('.chatShow')
+const arrowBtn = document.querySelector('.arrowBtn')
+const sideChats = document.querySelector('.sideChats');
+
+
+
+arrowBtn.addEventListener('click', () => {
+  sideChats.classList.remove('hidden');
+  showChat.classList.add('hidden');
+  startingText.classList.remove('hidden')
+})
+
+console.log(sender);
+console.log(chatContainer);
+let users = [];
+cardContainer1.forEach((el) => {
+  el.addEventListener("click", (e) => {
+    const name = document.querySelector(".name");
+    const status = document.querySelector(".status");
+    let card = e.target.dataset.id;
+    sideChats.classList.add('hidden')
+    startingText.classList.add('hidden')
+    showChat.classList.remove('hidden')
+
+    name.textContent = users[card].name;
+    status.textContent = users[card].online ? "Online" : "Offline";
+  });
+
+});
+
 function createSidebarChat(user) {
-  const imgDiv = document.createElement('div')
-  imgDiv.classList.add('imgCard')
-  const nameAndMessageContainer = document.createElement('div')
-  const timeAndUnreadMessage = document.createElement('div')
-  const innerContainer = document.createElement('div')
-  innerContainer.classList.add('card')
-  const userName = document.createElement('h2')
-  const userMessage = document.createElement('p')
-  const userTime = document.createElement('div')
-  const unreadMessage = document.createElement('div')
-
-  userName.textContent = user.name
-  userMessage.textContent = user.lastMessage
-  userTime.textContent = user.time
-  unreadMessage.textContent = user.unread
-
-  innerContainer.append(imgDiv)
+  const imgDiv = document.createElement("div");
+  imgDiv.classList.add("imgCard");
+  const nameAndMessageContainer = document.createElement("div");
+  const timeAndUnreadMessage = document.createElement("div");
+  const innerContainer = document.createElement("div");
+  innerContainer.classList.add("card");
+  const userName = document.createElement("h2");
+  const userMessage = document.createElement("p");
+  const userTime = document.createElement("div");
+  const unreadMessage = document.createElement("div");
+  userName.textContent = user.name;
+  userMessage.textContent = user.lastMessage;
+  userTime.textContent = user.time;
+  unreadMessage.textContent = user.unread;
+  userName.dataset.id = user.id;
+  userMessage.dataset.id = user.id;
+  innerContainer.dataset.id = user.id;
+  userTime.dataset.id = user.id;
+  unreadMessage.dataset.id = user.id;
+  innerContainer.append(imgDiv);
   nameAndMessageContainer.append(userName, userMessage);
   timeAndUnreadMessage.append(userTime, unreadMessage);
   innerContainer.append(nameAndMessageContainer, timeAndUnreadMessage);
   cardContainer.append(innerContainer);
-
 }
 
-const fetchMessage = fetch('message.json')
-  .then((res) =>
-    res.json()
-      .then((data) => {
-        data.forEach((el) => {
-          createSidebarChat(el)
-        })
-      }))
+
+async function apiCall() {
+  try {
+    const response = await fetch('message.json');
+    if (!response.ok) {
+      throw new Error('failed to fetch data');
+    }
+    const data = await response.json();
+    users = data;
+    data.forEach((el) => {
+      createSidebarChat(el);
+    })
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+apiCall()
+
 
 let data = JSON.parse(localStorage.getItem("data")) || [];
 data.forEach((msg) => {
@@ -62,7 +107,9 @@ function createMessage(val) {
   sendTime.classList.add("text");
   sendTime.textContent = val.time;
   message.append(sendTime);
+
 }
+
 function sendMessage() {
   if (messageInput.value.trim() === "") return;
   const messageData = {
@@ -99,6 +146,8 @@ function createMessageReceiver(el, showTyping) {
   receiveTime.classList.add("text");
   receiveContainer.append(receiver);
   receiver.classList.add("receive");
+
+
 
   if (showTyping) {
     typingEffect.textContent = "typing...";
@@ -148,3 +197,4 @@ function timer() {
   const amPm = time.getHours() >= 12 ? "pm" : "am";
   return `${hours}:${minute}${amPm}`;
 }
+

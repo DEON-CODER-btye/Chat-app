@@ -20,7 +20,7 @@
   <main>
     <div class="flex bg-gray-100 w-full h-screen overflow-hidden">
       <!-- LEFT SIDEBAR -->
-      <div class="bg-gray-50 w-full max-w-[460px] h-screen overflow-y-auto mx-1 p-2">
+      <div class="sideChats bg-gray-50 w-full max-w-[460px] h-screen overflow-y-auto mx-1 p-2">
         <h1 class="text-4xl pt-5 text-center font-bold">
           💬Chat
           <span class="text-blue-500">Buddy</span>
@@ -45,13 +45,19 @@
         <div class="cardContainer">
         </div>
       </div>
-      <div class="bg-gray-100 flex-1 h-screen flex flex-col overflow-hidden">
-        <div class="flex bg-white w-full items-center gap-5 h-[100px] text-black px-5 shadow-md flex-shrink-0">
-          <div class="w-10 h-10 rounded-full bg-gray-300 bg-[url('man.png')] bg-cover bg-center"></div>
+      <div
+        class="startingPage flex justify-center mx-auto items-center text-4xl font-extralight gap-4 max-[950px]:hidden">
+        Chat Buddy For
+        You..
+        <div class="text-4xl">💬</div>
 
+      </div>
+      <div class="chatShow bg-gray-100 flex-1 h-screen flex flex-col overflow-hidden hidden">
+        <div class="flex bg-white w-full items-center gap-5 h-[100px] text-black px-5 shadow-md flex-shrink-0 w-fu">
+          <div class="w-10 h-10 rounded-full bg-gray-300 bg-[url('man.png')] bg-cover bg-center"></div>
           <div class="w-full">
-            <h2>Priya Sharma</h2>
-            <h3>Online</h3>
+            <h2 class="name">Priya Sharma</h2>
+            <h3 class="status">Online</h3>
           </div>
 
           <div class="flex items-center gap-8 text-2xl text-gray-700">
@@ -62,31 +68,19 @@
             <i class="fa-solid fa-video cursor-pointer hover:text-blue-500"></i>
 
             <i class="fa-solid fa-ellipsis-vertical cursor-pointer hover:text-blue-500"></i>
+            <div class="">
+              <i class="arrowBtn fa-solid fa-arrow-left cursor-pointer hover:text-blue-500 text-[20px]"></i>
+            </div>
           </div>
         </div>
 
-        <div class="chatContainer flex-1 overflow-y-auto px-5">
+        <div class="chatContainer flex-1 overflow-y-auto px-5 mt-2">
           <div class="flex pt-5 justify-center">
             <h2 class="bg-gray-200 rounded-2xl px-4 py-1">Today</h2>
           </div>
 
           <div class="send mt-5">
             <div>
-              <span class="bg-white text-black px-2 py-2 rounded-[5px]">
-                Hey ✋
-              </span>
-            </div>
-
-            <div class="mt-16 flex justify-end">
-              <span class="bg-blue-400 text-white px-5 py-2 rounded-[5px]">
-                How are you doing
-              </span>
-            </div>
-
-            <div class="mt-16">
-              <span class="bg-white text-black px-5 py-3 rounded-[5px] w-fit">
-                I'm good too ! just working on a new project.
-
               </span>
             </div>
           </div>
@@ -98,7 +92,6 @@
             <input type="text" placeholder="Type a message..." class="messageBox flex-1 px-4 outline-none" />
 
             <i class="fa-solid fa-paperclip mr-4"></i>
-
             <button class="w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center">
               <i class="sendBtn fa-solid fa-paper-plane"></i>
             </button>
