@@ -21,9 +21,17 @@
 }
 
 .card {
-  @apply bg-gray-200 w-full min-h-16 mt-5 rounded-[5px] flex mx-auto items-center text-black justify-between px-5;
+  @apply bg-gray-200 w-full min-h-16 mt-5 rounded-[5px] text-black flex justify-between px-3 gap-2 items-center text-[15px] md:text-[18px];
 }
 
 .imgCard {
-  @apply ml-3 w-10 h-10 rounded-full bg-gray-300 bg-[url('man.png')] bg-cover bg-center;
+  @apply w-8 h-8 rounded-full bg-gray-300 bg-[url('man.png')] bg-cover bg-center px-3;
+}
+
+.user {
+  @apply truncate;
+}
+
+.center {
+  @apply flex flex-col items-center
 }

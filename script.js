@@ -5,18 +5,16 @@ const sendBtn = document.querySelector(".sendBtn");
 const chatContainer = document.querySelector(".chatContainer");
 const cardContainer = document.querySelector(".cardContainer");
 const cardContainer1 = document.querySelectorAll(".cardContainer");
-const startingText = document.querySelector('.startingPage')
-const showChat = document.querySelector('.chatShow')
-const arrowBtn = document.querySelector('.arrowBtn')
-const sideChats = document.querySelector('.sideChats');
+const startingText = document.querySelector(".startingPage");
+const showChat = document.querySelector(".chatShow");
+const arrowBtn = document.querySelector(".arrowBtn");
+const sideChats = document.querySelector(".sideChats");
 
-
-
-arrowBtn.addEventListener('click', () => {
-  sideChats.classList.remove('hidden');
-  showChat.classList.add('hidden');
-  startingText.classList.remove('hidden')
-})
+arrowBtn.addEventListener("click", () => {
+  sideChats.classList.remove("hidden");
+  showChat.classList.add("hidden");
+  startingText.classList.remove("hidden");
+});
 
 console.log(sender);
 console.log(chatContainer);
@@ -25,15 +23,14 @@ cardContainer1.forEach((el) => {
   el.addEventListener("click", (e) => {
     const name = document.querySelector(".name");
     const status = document.querySelector(".status");
-    let card = e.target.dataset.id;
-    sideChats.classList.add('hidden')
-    startingText.classList.add('hidden')
-    showChat.classList.remove('hidden')
+    let card = e.target.dataset.id - 1;
+    sideChats.classList.add("hidden");
+    startingText.classList.add("hidden");
+    showChat.classList.remove("hidden");
 
     name.textContent = users[card].name;
     status.textContent = users[card].online ? "Online" : "Offline";
   });
-
 });
 
 function createSidebarChat(user) {
@@ -47,6 +44,8 @@ function createSidebarChat(user) {
   const userMessage = document.createElement("p");
   const userTime = document.createElement("div");
   const unreadMessage = document.createElement("div");
+  timeAndUnreadMessage.classList.add('center')
+  userMessage.classList.add('truncate', 'w-50')
   userName.textContent = user.name;
   userMessage.textContent = user.lastMessage;
   userTime.textContent = user.time;
@@ -63,25 +62,23 @@ function createSidebarChat(user) {
   cardContainer.append(innerContainer);
 }
 
-
 async function apiCall() {
   try {
-    const response = await fetch('message.json');
+    const response = await fetch("message.json");
     if (!response.ok) {
-      throw new Error('failed to fetch data');
+      throw new Error("failed to fetch data");
     }
     const data = await response.json();
     users = data;
     data.forEach((el) => {
       createSidebarChat(el);
-    })
+    });
   } catch (error) {
     console.log(error);
   }
 }
 
-apiCall()
-
+apiCall();
 
 let data = JSON.parse(localStorage.getItem("data")) || [];
 data.forEach((msg) => {
@@ -107,7 +104,6 @@ function createMessage(val) {
   sendTime.classList.add("text");
   sendTime.textContent = val.time;
   message.append(sendTime);
-
 }
 
 function sendMessage() {
@@ -146,8 +142,6 @@ function createMessageReceiver(el, showTyping) {
   receiveTime.classList.add("text");
   receiveContainer.append(receiver);
   receiver.classList.add("receive");
-
-
 
   if (showTyping) {
     typingEffect.textContent = "typing...";
@@ -197,4 +191,5 @@ function timer() {
   const amPm = time.getHours() >= 12 ? "pm" : "am";
   return `${hours}:${minute}${amPm}`;
 }
+
 
