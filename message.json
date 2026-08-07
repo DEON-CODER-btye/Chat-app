@@ -3,70 +3,161 @@
     "id": 1,
     "name": "Priya",
     "avatar": "P",
+    "online": true,
     "lastMessage": "See you tomorrow 😊",
     "time": "10:30 PM",
-    "online": true,
     "unread": 2,
-    "message": []
+    "message": [
+      {
+        "text": "Hey! How's your day going?",
+        "type": "sender"
+      },
+      {
+        "text": "Pretty good! Just finished some work.",
+        "type": "receiver"
+      },
+      {
+        "text": "Awesome 😄",
+        "type": "sender"
+      }
+    ]
   },
   {
     "id": 2,
     "name": "Aman",
     "avatar": "A",
+    "online": false,
     "lastMessage": "Project is looking good 🔥",
     "time": "9:15 PM",
-    "online": false,
     "unread": 0,
-    "message": []
+    "message": [
+      {
+        "text": "Did you push the latest code?",
+        "type": "receiver"
+      },
+      {
+        "text": "Yes, I pushed it 10 minutes ago.",
+        "type": "sender"
+      },
+      {
+        "text": "Great! I'll check it.",
+        "type": "receiver"
+      }
+    ]
   },
   {
     "id": 3,
     "name": "Deepak",
     "avatar": "D",
+    "online": true,
     "lastMessage": "Can you send the files?",
     "time": "8:45 PM",
-    "online": true,
     "unread": 5,
-    "message": []
+    "message": [
+      {
+        "text": "Can you send the project files?",
+        "type": "receiver"
+      },
+      {
+        "text": "Sure, uploading them now.",
+        "type": "sender"
+      },
+      {
+        "text": "Thanks bro 🙌",
+        "type": "receiver"
+      }
+    ]
   },
   {
     "id": 4,
     "name": "Ali",
     "avatar": "A",
+    "online": false,
     "lastMessage": "Let's meet tomorrow",
     "time": "Yesterday",
-    "online": false,
     "unread": 0,
-    "message": []
+    "message": [
+      {
+        "text": "Are we meeting tomorrow?",
+        "type": "receiver"
+      },
+      {
+        "text": "Yes, around 5 PM.",
+        "type": "sender"
+      },
+      {
+        "text": "Perfect 👍",
+        "type": "receiver"
+      }
+    ]
   },
   {
     "id": 5,
     "name": "Rahul",
     "avatar": "R",
+    "online": true,
     "lastMessage": "Good morning bro",
     "time": "Yesterday",
-    "online": true,
     "unread": 1,
-    "message": []
+    "message": [
+      {
+        "text": "Good morning! ☀️",
+        "type": "receiver"
+      },
+      {
+        "text": "Morning! Ready for coding?",
+        "type": "sender"
+      },
+      {
+        "text": "Always 😎",
+        "type": "receiver"
+      }
+    ]
   },
   {
     "id": 6,
     "name": "Neha",
     "avatar": "N",
+    "online": false,
     "lastMessage": "Thank you Brother ❤️",
     "time": "Monday",
-    "online": false,
     "unread": 0,
-    "message": []
+    "message": [
+      {
+        "text": "Thank you for helping me yesterday ❤️",
+        "type": "receiver"
+      },
+      {
+        "text": "You're welcome!",
+        "type": "sender"
+      },
+      {
+        "text": "Really appreciate it 😊",
+        "type": "receiver"
+      }
+    ]
   },
   {
     "id": 7,
     "name": "Suraj",
-    "avatar": "N",
-    "lastMessage": "can i do something for you ? i don't care whatever you are said but one think in my mind if you will go with someone so i would kill my self",
-    "time": "Monday",
+    "avatar": "S",
     "online": false,
+    "lastMessage": "Can't wait to see your project 🚀 because i need this project i dont't think your project is week ",
+    "time": "Monday",
     "unread": 1,
-    "message": []
+    "message": [
+      {
+        "text": "Have you completed the JavaScript project?",
+        "type": "receiver"
+      },
+      {
+        "text": "Almost. I'm working on the separate chat feature now.",
+        "type": "sender"
+      },
+      {
+        "text": "That's awesome! Keep going 🚀",
+        "type": "receiver"
+      }
+    ]
   }
 ]

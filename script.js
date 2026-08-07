@@ -1,4 +1,4 @@
-// debugger
+
 const sender = document.querySelector(".send");
 const messageInput = document.querySelector(".messageBox");
 const sendBtn = document.querySelector(".sendBtn");
@@ -16,14 +16,25 @@ arrowBtn.addEventListener("click", () => {
   startingText.classList.remove("hidden");
 });
 
-console.log(sender);
-console.log(chatContainer);
 let users = [];
+let currentChatIndex = Number(localStorage.getItem("currentChatIndex"));
 cardContainer1.forEach((el) => {
   el.addEventListener("click", (e) => {
     const name = document.querySelector(".name");
     const status = document.querySelector(".status");
     let card = e.target.dataset.id - 1;
+    currentChatIndex = card;
+    localStorage.setItem("currentChatIndex", currentChatIndex);
+
+    sender.innerHTML = "";
+    users[card].message.forEach((msg) => {
+      if (msg.type == "sender") {
+        createMessage(msg);
+      } else {
+        createMessageReceiver(msg);
+      }
+    });
+
     sideChats.classList.add("hidden");
     startingText.classList.add("hidden");
     showChat.classList.remove("hidden");
@@ -44,8 +55,8 @@ function createSidebarChat(user) {
   const userMessage = document.createElement("p");
   const userTime = document.createElement("div");
   const unreadMessage = document.createElement("div");
-  timeAndUnreadMessage.classList.add('center')
-  userMessage.classList.add('truncate', 'w-50')
+  timeAndUnreadMessage.classList.add("center");
+  userMessage.classList.add("truncate", "w-50");
   userName.textContent = user.name;
   userMessage.textContent = user.lastMessage;
   userTime.textContent = user.time;
@@ -64,13 +75,23 @@ function createSidebarChat(user) {
 
 async function apiCall() {
   try {
-    const response = await fetch("message.json");
-    if (!response.ok) {
-      throw new Error("failed to fetch data");
+    const storedUsers = localStorage.getItem("users");
+
+    if (storedUsers) {
+      users = JSON.parse(storedUsers);
+    } else {
+      const response = await fetch("message.json");
+
+      if (!response.ok) {
+        throw new Error("failed to fetch data");
+      }
+
+      users = await response.json();
+
+      localStorage.setItem("users", JSON.stringify(users));
     }
-    const data = await response.json();
-    users = data;
-    data.forEach((el) => {
+
+    users.forEach((el) => {
       createSidebarChat(el);
     });
   } catch (error) {
@@ -80,8 +101,9 @@ async function apiCall() {
 
 apiCall();
 
-let data = JSON.parse(localStorage.getItem("data")) || [];
-data.forEach((msg) => {
+let data = JSON.parse(localStorage.getItem("users")) || [];
+
+data[currentChatIndex].message.forEach((msg) => {
   if (msg.type === "sender") {
     createMessage(msg);
   } else {
@@ -113,13 +135,13 @@ function sendMessage() {
     time: timer(),
     type: "sender",
   };
-  data.push(messageData);
+  users[currentChatIndex].message.push(messageData);
   createMessage(messageData);
   chatContainer.scrollTo({
     top: chatContainer.scrollHeight,
     behavior: "smooth",
   });
-  localStorage.setItem("data", JSON.stringify(data));
+  localStorage.setItem("users", JSON.stringify(users));
   messageInput.value = "";
   receiverMessage();
 }
@@ -171,13 +193,13 @@ function receiverMessage() {
       type: "receiver",
       text: receiveMessages[randomMessage],
     };
-    data.push(messageData1);
+    users[currentChatIndex].message.push(messageData1);
     createMessageReceiver(messageData1, true);
     chatContainer.scrollTo({
       top: chatContainer.scrollHeight,
       behavior: "smooth",
     });
-    localStorage.setItem("data", JSON.stringify(data));
+    localStorage.setItem("users", JSON.stringify(users));
   }, 2000);
 }
 
@@ -191,5 +213,3 @@ function timer() {
   const amPm = time.getHours() >= 12 ? "pm" : "am";
   return `${hours}:${minute}${amPm}`;
 }
-
-

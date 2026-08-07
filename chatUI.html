@@ -17,85 +17,83 @@
 </head>
 
 <body class="font-['Poppins'] overflow-hidden">
-  <main>
-    <div class="flex bg-gray-100 w-full h-screen overflow-hidden">
-      <!-- LEFT SIDEBAR -->
-      <div class="sideChats bg-gray-50 w-full max-w-[460px] h-screen overflow-y-auto mx-1 p-2">
-        <h1 class="text-4xl pt-5 text-center font-bold">
-          💬Chat
-          <span class="text-blue-500">Buddy</span>
-          <i class="fa-solid fa-bars text-3xl pl-3 md:pl-16"></i>
-        </h1>
+  <main class="flex bg-gray-100 w-full h-screen overflow-hidden">
+    <!-- LEFT SIDEBAR -->
+    <div class="sideChats bg-gray-50 w-full max-w-[460px] h-screen overflow-y-auto mx-1 p-2">
+      <h1 class="text-4xl pt-5 text-center font-bold">
+        💬Chat
+        <span class="text-blue-500">Buddy</span>
+        <i class="fa-solid fa-bars text-3xl pl-3 md:pl-16"></i>
+      </h1>
 
-        <button
-          class="bg-blue-500 px-28 py-3 mt-5 flex mx-auto justify-center text-white items-center rounded-[7px] text-[15px] md:text-2xl">
-          + New Chat
-        </button>
+      <button
+        class="bg-blue-500 px-28 py-3 mt-5 flex mx-auto justify-center text-white items-center rounded-[7px] text-[15px] md:text-2xl">
+        + New Chat
+      </button>
 
-        <div class="pt-8 relative flex">
-          <input class="w-full max-w-[350px] rounded-[5px] py-3 pl-9 mx-2 bg-gray-200 text-black" type="text"
-            placeholder="Search Conversations..." />
+      <div class="pt-8 relative flex">
+        <input type="text" class="w-full max-w-[350px] rounded-[5px] py-3 pl-9 mx-2 bg-gray-200 text-black" type="text"
+          placeholder="Search Conversations..." />
 
-          <i class="fa-solid fa-magnifying-glass absolute left-4 top-12 text-gray-500"></i>
 
-          <div class="bg-gray-200 px-7 py-3 rounded-[5px]">
-            <i class="fa-solid fa-sliders text-gray-500"></i>
-          </div>
-        </div>
-        <div class="cardContainer">
+        <i class="fa-solid fa-magnifying-glass absolute left-4 top-12 text-gray-500"></i>
+
+        <div class="bg-gray-200 px-7 py-3 rounded-[5px]">
+          <i class="fa-solid fa-sliders text-gray-500"></i>
         </div>
       </div>
-      <div
-        class="startingPage flex justify-center mx-auto items-center text-4xl font-extralight gap-4 max-[950px]:hidden">
-        Chat Buddy For
-        You..
-        <div class="text-4xl">💬</div>
-
+      <div class="cardContainer">
       </div>
-      <div class="chatShow bg-gray-100 flex-1 h-screen flex flex-col overflow-hidden hidden">
-        <div class="flex bg-white w-full items-center gap-5 h-[100px] text-black px-5 shadow-md flex-shrink-0">
-          <div class="w-8 h-8 px-3 rounded-full bg-gray-300 bg-[url('man.png')] bg-cover bg-center"></div>
-          <div class="w-full">
-            <h2 class="name">Priya Sharma</h2>
-            <h3 class="status">Online</h3>
-          </div>
+    </div>
+    <div
+      class="startingPage flex justify-center mx-auto items-center text-4xl font-extralight gap-4 max-[950px]:hidden">
+      Chat Buddy For
+      You..
+      <div class="text-4xl">💬</div>
 
-          <div class="flex items-center gap-5 text-[18px] md:text-2xl text-gray-700">
-            <i class="fa-solid fa-magnifying-glass cursor-pointer hover:text-blue-500"></i>
-
-            <i class="fa-solid fa-phone cursor-pointer hover:text-blue-500"></i>
-
-            <i class="fa-solid fa-video cursor-pointer hover:text-blue-500"></i>
-
-            <i class="fa-solid fa-ellipsis-vertical cursor-pointer hover:text-blue-500"></i>
-            <div class="">
-              <i class="arrowBtn fa-solid fa-arrow-left cursor-pointer hover:text-blue-500 text-[20px]"></i>
-            </div>
-          </div>
+    </div>
+    <div class="chatShow bg-gray-100 flex-1 h-screen flex flex-col overflow-hidden hidden">
+      <div class="flex bg-white w-full items-center gap-5 h-[100px] text-black px-5 shadow-md flex-shrink-0">
+        <div class="w-8 h-8 px-3 rounded-full bg-gray-300 bg-[url('man.png')] bg-cover bg-center"></div>
+        <div class="w-full">
+          <h2 class="name">Priya Sharma</h2>
+          <p class="status">Online</p>
         </div>
 
-        <div class="chatContainer flex-1 overflow-y-auto px-5 mt-2">
-          <div class="flex pt-5 justify-center">
-            <h2 class="bg-gray-200 rounded-2xl px-4 py-1">Today</h2>
-          </div>
+        <div class="flex items-center gap-5 text-[18px] md:text-2xl text-gray-700">
+          <i class="fa-solid fa-magnifying-glass cursor-pointer hover:text-blue-500"></i>
 
-          <div class="send mt-5">
-            <div>
-              </span>
-            </div>
+          <i class="fa-solid fa-phone cursor-pointer hover:text-blue-500"></i>
+
+          <i class="fa-solid fa-video cursor-pointer hover:text-blue-500"></i>
+
+          <i class="fa-solid fa-ellipsis-vertical cursor-pointer hover:text-blue-500"></i>
+          <div class="">
+            <i class="arrowBtn fa-solid fa-arrow-left cursor-pointer hover:text-blue-500 text-[20px]"></i>
           </div>
         </div>
-        <div class="bg-gray-100 py-8 flex-shrink-0">
-          <div class="flex items-center bg-white rounded-xl border px-4 py-1.5 mx-5">
-            <i class="fa-regular fa-face-smile"></i>
+      </div>
 
-            <input type="text" placeholder="Type a message..." class="messageBox flex-1 px-4 outline-none" />
+      <div class="chatContainer flex-1 overflow-y-auto px-5 mt-2">
+        <div class="flex pt-5 justify-center">
+          <h2 class="bg-gray-200 rounded-2xl px-4 py-1">Today</h2>
+        </div>
 
-            <i class="fa-solid fa-paperclip mr-4"></i>
-            <button class="w-10 h-10 rounded-full bg-blue-500 text-white flex items-center justify-center">
-              <i class="sendBtn fa-solid fa-paper-plane"></i>
-            </button>
+        <div class="send mt-5">
+          <div>
           </div>
+        </div>
+      </div>
+      <div class="bg-gray-100 py-8 flex-shrink-0">
+        <div class="flex items-center bg-white rounded-xl border px-4 py-1.5 mx-5">
+          <i class="fa-regular fa-face-smile"></i>
+
+          <input type="text" placeholder="Type a message..." class="messageBox flex-1 px-2 py-2 outline-none" />
+
+          <i class="fa-solid fa-paperclip mr-4"></i>
+          <button class="w-7 h-7 p-5 rounded-full bg-blue-500 text-white flex items-center justify-center">
+            <i class="sendBtn fa-solid fa-paper-plane"></i>
+          </button>
         </div>
       </div>
     </div>

@@ -21,7 +21,7 @@
 }
 
 .card {
-  @apply bg-gray-200 w-full min-h-16 mt-5 rounded-[5px] text-black flex justify-between px-3 gap-2 items-center text-[15px] md:text-[18px];
+  @apply bg-gray-200 w-full min-h-16 mt-5 rounded-[5px] text-black flex justify-between px-3 gap-2 items-center text-[15px] md:text-[16px];
 }
 
 .imgCard {
